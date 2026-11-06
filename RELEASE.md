@@ -34,7 +34,7 @@
 | **3. Model gizli kalır mı?** | **Hayır.** `model.onnx` herkese açık, katsayılar okunabilir. Bu projede kabul edilebilir, çünkü model bir sır değil ve kart zaten katsayıları yayınlıyor | Hayır, APK açılıp çıkarılabilir | Evet, dosya inmez. Ancak istek-yanıt üzerinden çok sayıda sorgu ile model taklit edilebilir (model extraction / tersine mühendislik riski). Rate-limit gerekir |
 | Maliyet / işletim | 0 TL, statik GitHub Pages | 0 TL, ama mağaza / derleme hattı | 0 TL ücretsiz katman, ama izleme ve uyku sorunu |
 
-**Gerekçe:** Oyun 60 sn baskı altında oynanıyor (gecikme kritik), davranış verisi kişisel sayılabilir (cihazdan çıkmamalı) ve modelin gizliliği önemsiz. Üç sorunun ikisinde tarayıcı kazanıyor, üçüncüsünde bedeli sıfıra yakın. Ödev 6 spec'i native mobili zaten kapsam dışı bırakmıştı. Sunucu tüketicisi (bonus) bu teslimde **yapılmadı**.
+**Gerekçe:** Oyun 60 sn baskı altında oynanıyor (gecikme kritik), davranış verisi kişisel sayılabilir (cihazdan çıkmamalı) ve modelin gizliliği önemsiz. Üç sorunun ikisinde tarayıcı kazanıyor, üçüncüsünde bedeli sıfıra yakın. Ödev 6 spec'i native mobili zaten kapsam dışı bırakmıştı. Sunucu tüketicisi yine de **bonus** olarak kuruldu (`server/app.py`, Render.com ücretsiz katman): oyun onu kullanmaz, yalnızca üçüncü bir bağımsız tüketici olarak parite testine girer. Böylece matristeki sunucu sütununun ödünleşimleri (soğuk başlangıç, verinin cihazdan çıkması) ölçülerek gözlemlenebilir.
 
 ## Kaynaklar
 * Amershi vd. (2019), *Software Engineering for Machine Learning: A Case Study*, ICSE-SEIP. ML yaşam döngüsünün gözlemden veri toplamaya geri döndüğü döngü; bizde Veri Toplama Modu → yeniden eğitim.

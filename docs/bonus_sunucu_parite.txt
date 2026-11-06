@@ -1,0 +1,6 @@
+aceleci_deneyimli_s2     sunucu=0.93298864 oracle=0.93298864 |fark|=3.65e-09
+temkinli_yeni_s2         sunucu=0.07043135 oracle=0.07043135 |fark|=1.66e-09
+iki_hata_s3              sunucu=0.91594994 oracle=0.91594994 |fark|=6.81e-10
+tutor_kullanan_s3        sunucu=0.10558426 oracle=0.10558426 |fark|=3.80e-09
+sinir_orta_s2            sunucu=0.57747096 oracle=0.57747096 |fark|=1.77e-09
+max |fark| = 3.801574707806843e-09 → GEÇTİ

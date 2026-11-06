@@ -13,6 +13,7 @@
 | Artefakt + model kartı | [`model/`](model/) (`model.onnx`, `config.json`, `README.md`) |
 | Yayın, rollback, shadow/canary, ödünleşim matrisi | [`RELEASE.md`](RELEASE.md) |
 | Python Oracle + referanslar | [`tests/parite.py`](tests/parite.py), [`tests/parite.json`](tests/parite.json) |
+| Bonus sunucu (FastAPI, Render) | https://onkodoz-riskli-karar-api.onrender.com |
 | Cypress (parite + regresyon) | [`cypress/e2e/v2_model.cy.js`](cypress/e2e/v2_model.cy.js), [`cypress/e2e/onkodoz.cy.js`](cypress/e2e/onkodoz.cy.js) |
 | Vize sınav tasarımı | [`SINAV_TASARIMI.md`](SINAV_TASARIMI.md) |
 
@@ -60,14 +61,25 @@ Model `a`'yı görmez; yalnızca `a`'nın geçmişteki izlerini (hız, riskli ka
 | v1 regresyon E2E (6 test) | **6 / 6 geçti**. İlk koşuda 1 test kırıldı: Vite onnxruntime-web paketini ilk ziyarette yeniden paketleyip sayfayı yeniledi ve oyun durumu sıfırlandı. Düzeltme vite.config.ts içinde optimizeDeps.include. Testlere dokunulmadı |
 | v2 testleri (parite + Kabul 6 + Kabul 7) | 3 / 3 geçti |
 
+| Bonus: sunucu ile Python Oracle (5 girdi) | max 3.8e-09, geçti |
+
 Sınırlar ve kullanılmaması gereken durumlar: [`model/README.md`](model/README.md).
+
+## Bonus: kendi sunucumuzda üçüncü tüketici (FastAPI + onnxruntime, Render.com)
+* Kod: [`server/app.py`](server/app.py), dağıtım: [`render.yaml`](render.yaml) (ücretsiz plan). Sunucu aynı `model.onnx`'i **commit'e sabit Hugging Face URL'sinden** indirir.
+* Canlı uç nokta: `https://onkodoz-riskli-karar-api.onrender.com` (`GET /` sağlık, `POST /predict {"x":[...5 özellik]}`)
+* Diferansiyel test (Python Oracle vs sunucu, 5 girdi, `< 1e-4`):
+  * `python tests/parite_sunucu.py https://onkodoz-riskli-karar-api.onrender.com`
+  * `npx cypress run --spec cypress/e2e/bonus_sunucu.cy.js --config baseUrl=https://onkodoz-riskli-karar-api.onrender.com` (adres `tests/sunucu_url.txt`'den okunur)
+* Sonuç: **GEÇTİ**. 5 girdide en büyük fark `3.8e-09` (çıktı: [`docs/bonus_sunucu_parite.txt`](docs/bonus_sunucu_parite.txt)), Cypress `bonus_sunucu.cy.js` 1/1 geçti. Böylece aynı `model.onnx` üç ayrı ortamda (Python Oracle, tarayıcı `onnxruntime-web`, Linux sunucu `onnxruntime`) aynı sonucu veriyor.
+* Not: Ücretsiz katman 15 dk boşta kalınca uyur; ilk istek 30–60 sn sürebilir. RELEASE.md'deki "sunucuda her istekte gecikme / soğuk başlangıç" ödünleşiminin canlı kanıtı budur.
 
 ## Kaynaklar
 Amershi vd. (2019); Shankar vd. (2022); Breck vd. (2017); Mitchell vd. (2019); Sommerville, *Software Engineering* 10. baskı (Bl. 8, 17, 18, 25); Hugging Face Hub `resolve/<revision>` belgeleri; ONNX Runtime Web; skl2onnx. Mimari tartışma ve atıflar `RELEASE.md` içinde.
 
 ## Yapay Zekâ Beyanı (dürüst)
-* **Claude Code (Claude Opus 5.5)** bu ödevin neredeyse tamamını yaptı: spec §9, sentetik üretici, `train.py`, ONNX paketleme, `parite.py`, uygulamaya `onnxruntime-web` entegrasyonu, Cypress testleri, `RELEASE.md`, model kartı ve `SINAV_TASARIMI.md` taslağı.
-* Öğrencinin rolü: ödev metnini verip önce ajandan ödevin ne istediğini kavramsal olarak açıklamasını istemek. Teslim gecesi yoğunluk ve iki gün sonraki sınavlar nedeniyle uygulamayı ajana bıraktı. Elle kod düzeltmesi **yapılmadı**.
+* **Claude Code (Claude Opus 5.5)** bu ödevin neredeyse tamamını yaptı: spec §9, sentetik üretici, `train.py`, ONNX paketleme, `parite.py`, uygulamaya `onnxruntime-web` entegrasyonu, Cypress testleri, `RELEASE.md`, model kartı, `SINAV_TASARIMI.md` taslağı ve bonus FastAPI sunucusu.
+* Öğrencinin rolü: Render.com hesabını kendisi açtı. Ayrıca ödev metnini verip önce ajandan ödevin ne istediğini kavramsal olarak açıklamasını istemek. Teslim gecesi yoğunluk ve iki gün sonraki sınavlar nedeniyle uygulamayı ajana bıraktı. Elle kod düzeltmesi **yapılmadı**.
 * Ajanın kendi düzelttiği hatalar: Windows konsolunda UTF-8 çıktı hatası; eval kapısının iki kez kapanması üzerine kök neden analizi ve modelin kullanım alanının 2–3. sahnelere daraltılması (eşik değiştirilmedi).
 * v1 (Ödev 6) de Claude Code + Google AI Studio + Stitch ile yapılmıştı (bkz. `docs/README_v1.md`).
 
