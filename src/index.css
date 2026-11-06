@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #E3DBAE;
+    color: #2B1829;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.retro-card {
+  background-color: #FFF9E6;
+  border: 2.5px solid #2B1829;
+  box-shadow: 4px 4px 0px #2B1829;
+}
+
+.retro-card-sm {
+  background-color: #FFF9E6;
+  border: 2px solid #2B1829;
+  box-shadow: 2.5px 2.5px 0px #2B1829;
+}
+
+.retro-btn {
+  border: 2.5px solid #2B1829;
+  box-shadow: 4px 4px 0px #2B1829;
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+}
+
+.retro-btn:hover:not(:disabled) {
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 2.5px 2.5px 0px #2B1829;
+}
+
+.retro-btn:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #2B1829;
+}
+
+.retro-chip {
+  border: 2px solid #2B1829;
+  box-shadow: 2px 2px 0px #2B1829;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.retro-chip:hover:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #2B1829;
+}
+
+.retro-chip:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #2B1829;
+}
+
+.socratic-drawer {
+  background-color: #ECE8F4;
+  border: 2.5px solid #5E548E;
+  box-shadow: 4px 4px 0px #5E548E;
+}
+
+.telemetry-crt {
+  background-color: #1F121E;
+  border: 2px solid #2B1829;
+  border-left: 4px solid #E05A47;
+}

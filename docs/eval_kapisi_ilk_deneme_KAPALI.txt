@@ -1,0 +1,13 @@
+EVAL KAPISI KAPALI — model yayınlanmaz:
+  - ROC-AUC 0.5798 < 0.7
+  - doğruluk 0.6182 < taban 0.6364 + 0.03
+{
+  "test_roc_auc": 0.5798,
+  "test_dogruluk": 0.6182,
+  "cogunluk_tabani": 0.6364,
+  "onnx_sklearn_max_fark": 6.82394482587334e-08,
+  "n_egitim": 495,
+  "n_test": 165,
+  "n_gercek": 0,
+  "n_sentetik": 660
+}

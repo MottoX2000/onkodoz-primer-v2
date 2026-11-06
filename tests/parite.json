@@ -1,0 +1,69 @@
+{
+  "aciklama": "Python Oracle (onnxruntime) olasılıkları; uygulama |fark| < tolerans olmalı",
+  "model_surum": "2.0.0",
+  "ozellikler": [
+    "seviye",
+    "sahne_no",
+    "onceki_riskli_sayisi",
+    "onceki_karar_suresi_sn",
+    "tutor_acma_sayisi"
+  ],
+  "tolerans": 0.0001,
+  "girdiler": [
+    {
+      "ad": "aceleci_deneyimli_s2",
+      "x": [
+        1,
+        2,
+        1,
+        5.0,
+        0
+      ],
+      "p": 0.93298864
+    },
+    {
+      "ad": "temkinli_yeni_s2",
+      "x": [
+        0,
+        2,
+        0,
+        40.0,
+        1
+      ],
+      "p": 0.07043135
+    },
+    {
+      "ad": "iki_hata_s3",
+      "x": [
+        1,
+        3,
+        2,
+        8.5,
+        0
+      ],
+      "p": 0.91594994
+    },
+    {
+      "ad": "tutor_kullanan_s3",
+      "x": [
+        0,
+        3,
+        0,
+        33.2,
+        3
+      ],
+      "p": 0.10558426
+    },
+    {
+      "ad": "sinir_orta_s2",
+      "x": [
+        1,
+        2,
+        0,
+        22.0,
+        0
+      ],
+      "p": 0.57747096
+    }
+  ]
+}

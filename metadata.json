@@ -1,0 +1,6 @@
+{
+  "name": "SE Primer: OnkoDoz-AI Kriz Simülasyonu",
+  "description": "YZM301 Yazılım Mühendisliği kapsamında kişiye uyum sağlayan, Sokratik AI Tutor destekli sağlık bilişimi üretim krizi simülasyonu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
