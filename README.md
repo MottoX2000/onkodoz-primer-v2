@@ -79,7 +79,7 @@ Amershi vd. (2019); Shankar vd. (2022); Breck vd. (2017); Mitchell vd. (2019); S
 
 ## Yapay Zekâ Beyanı (dürüst)
 * **Claude Code (Claude Opus 5.5)** bu ödevin neredeyse tamamını yaptı: spec §9, sentetik üretici, `train.py`, ONNX paketleme, `parite.py`, uygulamaya `onnxruntime-web` entegrasyonu, Cypress testleri, `RELEASE.md`, model kartı, `SINAV_TASARIMI.md` taslağı ve bonus FastAPI sunucusu.
-* Öğrencinin rolü: Render.com hesabını kendisi açtı. Ayrıca ödev metnini verip önce ajandan ödevin ne istediğini kavramsal olarak açıklamasını istemek. Teslim gecesi yoğunluk ve iki gün sonraki sınavlar nedeniyle uygulamayı ajana bıraktı. Elle kod düzeltmesi **yapılmadı**.
+* Öğrencinin rolü: Render.com hesabını kendisi açtı. Ayrıca ödev metnini verip önce ajandan ödevin ne istediğini kavramsal olarak açıklamasını istedi. Teslim gecesi yoğunluk ve iki gün sonraki sınavlar nedeniyle uygulamayı ajana bıraktı. Elle kod düzeltmesi **yapılmadı**.
 * Ajanın kendi düzelttiği hatalar: Windows konsolunda UTF-8 çıktı hatası; eval kapısının iki kez kapanması üzerine kök neden analizi ve modelin kullanım alanının 2–3. sahnelere daraltılması (eşik değiştirilmedi).
 * v1 (Ödev 6) de Claude Code + Google AI Studio + Stitch ile yapılmıştı (bkz. `docs/README_v1.md`).
 
