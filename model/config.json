@@ -1,0 +1,92 @@
+{
+  "model_adi": "onkodoz-riskli-karar",
+  "surum": "2.0.0",
+  "gorev": "ikili sınıflandırma: bu sahnede riskli karar (B/süre aşımı) olasılığı",
+  "girdi_adi": "input",
+  "girdi_tipi": "float32[N,5]",
+  "ozellikler": [
+    "seviye",
+    "sahne_no",
+    "onceki_riskli_sayisi",
+    "onceki_karar_suresi_sn",
+    "tutor_acma_sayisi"
+  ],
+  "ozellik_semasi": {
+    "seviye": {
+      "tip": "int",
+      "aralik": [
+        0,
+        1
+      ],
+      "aciklama": "0=Yeni Başladım, 1=Deneyimliyim"
+    },
+    "sahne_no": {
+      "tip": "int",
+      "aralik": [
+        1,
+        3
+      ]
+    },
+    "onceki_riskli_sayisi": {
+      "tip": "int",
+      "aralik": [
+        0,
+        2
+      ]
+    },
+    "onceki_karar_suresi_sn": {
+      "tip": "float",
+      "aralik": [
+        0,
+        60
+      ],
+      "birim": "saniye"
+    },
+    "tutor_acma_sayisi": {
+      "tip": "int",
+      "aralik": [
+        0,
+        10
+      ]
+    }
+  },
+  "cikti": {
+    "isim": "probabilities",
+    "indeks": 1,
+    "aciklama": "P(riskli_karar=1)"
+  },
+  "siniflar": {
+    "0": "guvenli_karar_A",
+    "1": "riskli_karar_B_veya_sure_asimi"
+  },
+  "karar_esigi": 0.5,
+  "kabul_esikleri": {
+    "test_roc_auc_min": 0.7,
+    "taban_ustu_dogruluk_min": 0.03,
+    "parite_toleransi": 0.0001
+  },
+  "metrikler": {
+    "test_roc_auc": 0.8545,
+    "test_dogruluk": 0.74,
+    "cogunluk_tabani": 0.6267,
+    "onnx_sklearn_max_fark": 8.197624112860069e-08,
+    "n_egitim": 450,
+    "n_test": 150,
+    "n_gercek": 0,
+    "n_sentetik": 600
+  },
+  "egitim": {
+    "tohum": 42,
+    "algoritma": "LogisticRegression",
+    "sklearn": "1.7.2",
+    "test_orani": 0.25
+  },
+  "katsayilar": {
+    "seviye": 0.2192,
+    "sahne_no": 0.1401,
+    "onceki_riskli_sayisi": 0.077,
+    "onceki_karar_suresi_sn": -0.132,
+    "tutor_acma_sayisi": -0.2971
+  },
+  "kesisim": 2.7173
+}
