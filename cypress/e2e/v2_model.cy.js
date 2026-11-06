@@ -4,7 +4,7 @@
  *  (b) Kabul Örneği 6 & 7: aynı sahnede (S2) iki farklı oyuncu → model iki farklı karar verir
  * Regresyon: v1 testleri cypress/e2e/onkodoz.cy.js içinde değişmeden koşar.
  */
-const PAUSE = 1500;
+const PAUSE = 3000;
 
 describe('v2.0 Diferansiyel Test (Parite) — Python Oracle vs onnxruntime-web', () => {
   it('5 referans girdide |p_web - p_python| < tolerans', () => {
@@ -33,7 +33,9 @@ describe('v2.0 Kabul Örnekleri 6 & 7 — aynı sahnede iki oyuncu, iki farklı 
     cy.visit('/');
     cy.get('[data-cy="select-level-senior"]').click();
     cy.get('[data-cy="select-role-backend"]').click();
+    cy.wait(PAUSE);
     cy.get('[data-cy="start-game-btn"]').click();
+    cy.wait(PAUSE);
 
     cy.get('[data-cy="model-off"]').should('be.visible');
     cy.get('[data-cy="option-b-btn"]').click(); // hızlı + riskli
@@ -54,7 +56,9 @@ describe('v2.0 Kabul Örnekleri 6 & 7 — aynı sahnede iki oyuncu, iki farklı 
     cy.visit('/');
     cy.get('[data-cy="select-level-beginner"]').click();
     cy.get('[data-cy="select-role-qa"]').click();
+    cy.wait(PAUSE);
     cy.get('[data-cy="start-game-btn"]').click();
+    cy.wait(PAUSE);
 
     cy.get('[data-cy="tutor-toggle-btn"]').click();
     cy.get('[data-cy="tutor-toggle-btn"]').click();
