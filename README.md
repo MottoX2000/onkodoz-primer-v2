@@ -13,7 +13,7 @@
 | Artefakt + model kartı | [`model/`](model/) (`model.onnx`, `config.json`, `README.md`) |
 | Yayın, rollback, shadow/canary, ödünleşim matrisi | [`RELEASE.md`](RELEASE.md) |
 | Python Oracle + referanslar | [`tests/parite.py`](tests/parite.py), [`tests/parite.json`](tests/parite.json) |
-| Bonus sunucu (FastAPI, Render) | https://onkodoz-riskli-karar-api.onrender.com |
+| Bonus sunucu (FastAPI, Render) | https://onkodoz-riskli-karar-api.onrender.com/docs (tarayıcıdan denenebilir API arayüzü) |
 | Cypress (parite + regresyon) | [`cypress/e2e/v2_model.cy.js`](cypress/e2e/v2_model.cy.js), [`cypress/e2e/onkodoz.cy.js`](cypress/e2e/onkodoz.cy.js) |
 | Vize sınav tasarımı | [`SINAV_TASARIMI.md`](SINAV_TASARIMI.md) |
 
