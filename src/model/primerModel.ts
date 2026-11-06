@@ -7,7 +7,8 @@ ort.env.wasm.wasmPaths = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VER
 ort.env.wasm.numThreads = 1;
 
 // Commit'e sabitlenmiş Hugging Face URL'si (RELEASE.md). Boşsa yerel kopya kullanılır.
-export const HF_MODEL_URL = '';
+export const HF_MODEL_URL =
+  'https://huggingface.co/MottoX2000/onkodoz-riskli-karar/resolve/d627efbd7242d3dfa9992aa567ed6d23a19eb0cf/model.onnx';
 export const LOCAL_MODEL_URL = `${import.meta.env.BASE_URL}model/model.onnx`;
 
 export const FEATURES = [

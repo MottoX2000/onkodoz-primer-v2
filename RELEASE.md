@@ -10,10 +10,10 @@
 | Test | 6 E2E | 6 E2E (regresyon, değişmedi) + parite (diferansiyel) testi + Kabul Örneği 6 & 7 |
 
 ## Sabitlenmiş sürüm (pinning)
-* Hugging Face model reposu: `https://huggingface.co/HF_KULLANICI/onkodoz-riskli-karar`
-* **v2.0 commit:** `HF_COMMIT`
+* Hugging Face model reposu: `https://huggingface.co/MottoX2000/onkodoz-riskli-karar`
+* **v2.0 commit:** `d627efbd7242d3dfa9992aa567ed6d23a19eb0cf`
 * Tüketicinin indirdiği URL (asla `main` değil):
-  `https://huggingface.co/HF_KULLANICI/onkodoz-riskli-karar/resolve/HF_COMMIT/model.onnx`
+  `https://huggingface.co/MottoX2000/onkodoz-riskli-karar/resolve/d627efbd7242d3dfa9992aa567ed6d23a19eb0cf/model.onnx`
 * Uygulamada tek bir sabit: `src/model/primerModel.ts → HF_MODEL_URL`. HF erişilemezse uygulama paketle gelen yerel kopyaya (`public/model/model.onnx`, aynı bayt dizisi) düşer. Model hiç yüklenemezse oyun v1 davranışıyla devam eder (**fail-safe**).
 
 ## Rollback (geri alma)

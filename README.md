@@ -4,9 +4,9 @@
 
 | Teslim | Bağlantı / dosya |
 |---|---|
-| Canlı uygulama (GitHub Pages) | `CANLI_LINK` |
-| Hugging Face modeli (commit'e sabit) | `HF_LINK` |
-| Demo videosu | `VIDEO_LINK` (`cypress/videos/v2_model.cy.js.mp4`) |
+| Canlı uygulama (GitHub Pages) | https://mottox2000.github.io/onkodoz-primer-v2/ |
+| Hugging Face modeli (commit'e sabit) | https://huggingface.co/MottoX2000/onkodoz-riskli-karar/tree/d627efbd7242d3dfa9992aa567ed6d23a19eb0cf |
+| Demo videosu | https://mottox2000.github.io/onkodoz-primer-v2/demo.mp4 (`cypress/videos/v2_model.cy.js.mp4`) |
 | Spec (model gereksinimi, eşik, Kabul Örneği 6–8, karar kaydı) | [`spec.md`](spec.md) §9 |
 | Veri + sözlük | [`data/oturumlar.csv`](data/oturumlar.csv), [`data/SOZLUK.md`](data/SOZLUK.md) |
 | Eğitim + eval kapısı | [`train.py`](train.py) |
